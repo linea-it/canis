@@ -42,7 +42,7 @@ pipeline {
     stage('Push Images') {
       when {
         expression {
-          env.BRANCH_NAME.toString().equals('master')
+          env.BRANCH_NAME.toString().equals('main')
         }
       }
       steps {
@@ -50,8 +50,8 @@ pipeline {
           frontend: {
             dir('frontend') {
               script {
-                if (env.BRANCH_NAME.toString().equals('master')) {
-                  // No caso de um merge em master
+                if (env.BRANCH_NAME.toString().equals('main')) {
+                  // No caso de um merge em main
                   // Faz o push da imagem também como latest.
 
                   docker.withRegistry('', registryCredential) {
@@ -71,8 +71,8 @@ pipeline {
           backend: {
             dir('backend') {
               script {
-                if (env.BRANCH_NAME.toString().equals('master')) {
-                  // No caso de um merge em master
+                if (env.BRANCH_NAME.toString().equals('main')) {
+                  // No caso de um merge em main
                   // Faz o push da imagem também como latest.
 
                   docker.withRegistry('', registryCredential) {
