@@ -17,7 +17,7 @@ function Informacoes() {
               color="primary"
               gutterBottom
             >
-              Informaões Adicionais
+              Informações Adicionais
             </Typography>
             <br />
             <Typography
