@@ -8,7 +8,7 @@ const styles = makeStyles(() => ({
     textAlign: 'left',
   },
   checkboxLabel: {
-    margin: 0,
+    margin: '0 0 10px',
   },
   strike: {
     textDecoration: 'line-through',

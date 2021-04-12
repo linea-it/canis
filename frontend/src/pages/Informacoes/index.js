@@ -1,123 +1,149 @@
 import React from 'react';
 import { Grid, Container, Typography } from '@material-ui/core';
-import styles from './styles';
 
 function Informacoes() {
   // Change dynamically the page title:
   document.title = 'LIneA Minicurso | Informações Adicionais';
 
-  const classes = styles();
   return (
-    <Container>
-      <Grid item xs={12} className={classes.grid}>
-        <Grid item xs={11} md={7} className={classes.grid}>
-          <Typography variant="h5" color="primary" className={classes.title}>
-            Rationale:
-          </Typography>
-          <br />
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            className={classes.description}
-          >
-            This course will bring together representatives of some of the more
-            important data centers, eScience institutes and IT companies to
-            discuss current solutions and new technological trends as data
-            volumes from modern experiments such as LSST, Euclid and SKA
-            continue to grow. The course will take place remotely April 13-15,
-            2021. Inquiries can be sent to{' '}
-            <a href="mailto:course2021@linea.gov.br?subject=Course 2021">
-              <strong>course2021@linea.gov.br</strong>
-            </a>
-            .
-          </Typography>
-          <br />
-          <br />
-          <Typography variant="h5" color="primary" className={classes.title}>
-            Venue:
-          </Typography>
-          <br />
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            className={classes.description}
-          >
-            The course will be entirely remote and there will be no registration
-            fee. We ask those interested in participating to register{' '}
-            <a href="/registration">
-              <strong>here</strong>
-            </a>
-            . Participants will receive connection information on April 12.
-          </Typography>
-          <br />
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            className={classes.description}
-          >
-            Due to the large number of participants the presentations will be
-            broadcasted on youtube. A list of the links will be sent ahead of
-            time.
-          </Typography>
-          <br />
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            className={classes.description}
-          >
-            All talks will be recorded and will be available on the course’s
-            site and announced on LIneA’s social media the following Monday.
-          </Typography>
-          <br />
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            className={classes.description}
-          >
-            Certificates may be provided for registered participants. Please
-            contact the{' '}
-            <a href="mailto:course2021@linea.gov.br?subject=Course 2021 - Certificate">
-              <strong>LOC</strong>
-            </a>{' '}
-            if you need one.
-          </Typography>
-          <br />
-          <br />
-          <Typography variant="h5" color="primary" className={classes.title}>
-            Slack:
-          </Typography>
-          <br />
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            className={classes.description}
-          >
-            We will use Slack to address your questions. To register for the
-            course&apos;s workspace, please click{' '}
-            <a
-              href="https://join.slack.com/t/course2021grupo/shared_invite/zt-odwhahoh-1GkqK04VW7CN5UOqSvcR6w"
-              target="blank"
+    <div>
+      <Container>
+        <Grid container>
+          <Grid item xs={12}>
+            <Typography
+              variant="h3"
+              component="h1"
+              align="center"
+              color="primary"
+              gutterBottom
             >
-              <strong>here</strong>
-            </a>{' '}
-            and follow the instructions.
-          </Typography>
-          <br />
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            className={classes.description}
-          >
-            The Slack workspace is organized into six main channels:
-            #announcements, #day1, #day2, #day3, #discussions, and #helpdesk. To
-            post your questions and doubts regarding the presentations, use the
-            corresponding #day_ channel. To suggest topics for the round-table
-            session, use the channel #discussions. Inquiries about the event can
-            be posted at #helpdesk.
-          </Typography>
+              Informaões Adicionais
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              Com a recente liberação dos dados do <em>Dark Energy Survey</em>{' '}
+              (DES DR2) e a entrada de novos projetos, como o{' '}
+              <em>Large Synoptic Survey Telescope</em> (LSST), fica evidente a
+              importância de aumentar o engajamento da comunidade no trabalho
+              que vem sendo desenvolvido pelo LIneA. Sendo assim, nossa equipe
+              vem planejando e desenvolvendo o minicurso básico &ldquo;
+              <strong>
+                Introdução a ferramentas computacionais aplicadas à Astronomia
+              </strong>
+              &rdquo;. O objetivo principal é preparar a comunidade para as
+              novas ferramentas e serviços que em breve serão disponibilizadas
+              pelo LIneA em preparação para a era do{' '}
+              <a href="https://www.lsst.org" target="_blank" rel="noreferrer">
+                LSST
+              </a>
+              .
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              Nesse contexto apresentamos o módulo I:{' '}
+              <em>LIneA Science Server</em>!
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              A abordagem de apresentação deste módulo visa demonstrar as
+              ferramentas que estão disponíveis na plataforma do{' '}
+              <em>LIneA Science Server</em> (ementa), além de propor a
+              interatividade de uso das ferramentas através de atividades
+              práticas.
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              O módulo será ministrado pelo Dr. Adriano Pieres e está
+              estruturado para ser apresentado em duas aulas, uma por semana,
+              com carga horária total de 4 horas (programação).
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              Em sua primeira aplicação, o público alvo destinado para o
+              minicurso são doutores/doutorandos e pós-doutores com um número
+              limitado de <strong>30 vagas</strong>.
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              O período de inscrição acontece entre os dias{' '}
+              <strong>XX de abril</strong> até <strong>XX de maio</strong>.
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              O minicurso é totalmente <strong>gratuito</strong> e{' '}
+              <strong>online</strong>.
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              Serão emitidos certificados àqueles que solicitaram ao se
+              inscrever no minicurso (inscrição).
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              Ao finalizar o módulo um questionário será aplicado a fim de
+              termos um feedback dos participantes. Pretendemos com isso cada
+              vez mais melhorar nossas práticas educacionais e de engajamento
+              com a comunidade.
+            </Typography>
+            <br />
+            <Typography
+              variant="body1"
+              align="justify"
+              color="primary"
+              gutterBottom
+            >
+              Contato: <a href="mailto:cde@linea.gov.br">cde@linea.gov.br</a>
+            </Typography>
+            <br />
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 }
 

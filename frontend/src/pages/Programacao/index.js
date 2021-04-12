@@ -23,22 +23,23 @@ function Programacao() {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={5} style={{ width: '100%' }}>
-          <Typography variant="subtitle1" color="primary">
-            <strong>xx/05 | 9h às 11h</strong>
+          <Typography variant="h6" color="primary">
+            xx/05 | 9h às 11h
           </Typography>
           <Typography variant="subtitle1" color="primary">
-            Aula 1: Introdução e apresentação da plataforma e suas ferramentas
+            <strong>Aula 1</strong>: Introdução e apresentação da plataforma e
+            suas ferramentas
           </Typography>
           <Typography variant="subtitle1" color="primary">
             Apresentação da plataforma, suas ferramentas e métodos de uso.
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={5} style={{ width: '100%' }}>
-          <Typography variant="subtitle1" color="primary">
-            <strong>xx/05 | 9h às 11h</strong>
+          <Typography variant="h6" color="primary">
+            xx/05 | 9h às 11h
           </Typography>
           <Typography variant="subtitle1" color="primary">
-            Aula 2: Hands on
+            <strong>Aula 2</strong>: Hands on
           </Typography>
           <Typography variant="subtitle1" color="primary">
             Utilização das ferramentas através de atividades.

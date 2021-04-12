@@ -1,6 +1,4 @@
-/* eslint-disable no-nested-ternary */
 import React, { useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import {
   Grid,
   Container,
@@ -23,8 +21,6 @@ function Registro() {
   document.title = 'LIneA Course | Registro';
 
   const classes = styles();
-
-  const history = useHistory();
   const formRef = useRef();
   const recaptchaRef = useRef();
 
@@ -46,9 +42,10 @@ function Registro() {
       const name = formRef.current.name.value;
       const email = formRef.current.email.value;
       const institute = formRef.current.institute.value;
-      const newsletter = formRef.current.newsletter.checked;
+      const occupation = formRef.current.occupation.value;
+      const certificate = formRef.current.certificate.checked;
 
-      postSubscription({ name, email, institute, newsletter })
+      postSubscription({ name, email, institute, occupation, certificate })
         .then(() => {
           setOpenFormFeedback(true);
           // Reseting form:
@@ -58,10 +55,9 @@ function Registro() {
           recaptchaRef.current.reset();
 
           // Forcing the Newsletter checkbox to reset:
-          formRef.current.newsletter.checked = false;
+          formRef.current.certificate.checked = false;
 
           setIsLoading(false);
-          history.push('/registro/participantes/');
         })
         .catch((error) => {
           setErrorMessage(error.response.data);
@@ -80,24 +76,28 @@ function Registro() {
       <Container align="center">
         <Grid item xs={12}>
           <Grid item xs={11} md={6} className={classes.grid}>
-            <Typography variant="h3" align="center" color="primary">
+            <Typography
+              variant="h3"
+              align="center"
+              color="primary"
+              gutterBottom
+            >
               Registro
             </Typography>
             <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
               <div className={classes.textFields}>
                 <TextField
                   required
-                  id="full_name"
+                  id="name"
                   type="text"
                   variant="outlined"
-                  label="Nome Completo"
-                  name="full_name"
-                  placeholder="Nome Completo"
+                  label="Nome completo"
+                  name="name"
                   fullWidth
                   size="small"
-                  error={'full_name' in errorMessage}
+                  error={'name' in errorMessage}
                   helperText={
-                    'full_name' in errorMessage ? errorMessage.full_name[0] : ''
+                    'name' in errorMessage ? errorMessage.name[0] : ''
                   }
                 />
               </div>
@@ -139,17 +139,17 @@ function Registro() {
               <div className={classes.textFields}>
                 <TextField
                   required
-                  id="occupation_area"
+                  id="occupation"
                   type="text"
                   variant="outlined"
-                  label="Area de Atuação"
-                  name="occupation_area"
+                  label="Area de atuação"
+                  name="occupation"
                   fullWidth
                   size="small"
-                  error={'occupation_area' in errorMessage}
+                  error={'occupation' in errorMessage}
                   helperText={
-                    'occupation_area' in errorMessage
-                      ? errorMessage.occupation_area[0]
+                    'occupation' in errorMessage
+                      ? errorMessage.occupation[0]
                       : ''
                   }
                 />
@@ -159,7 +159,7 @@ function Registro() {
                 label="Gostaria de certificado?"
                 labelPlacement="start"
                 className={classes.checkboxLabel}
-                control={<Checkbox name="newsletter" />}
+                control={<Checkbox name="certificate" />}
               />
 
               <Grid
@@ -190,7 +190,7 @@ function Registro() {
                     ) : (
                       <EmailIcon fontSize="small" />
                     )}
-                    &nbsp;Submit
+                    &nbsp;Registrar
                   </Button>
                 </Grid>
                 <br />
@@ -199,7 +199,7 @@ function Registro() {
             <Grid item xs={12}>
               <br />
               <Typography variant="button" color="error">
-                * required fields
+                * campos obrigatórios
               </Typography>
             </Grid>
           </Grid>
@@ -212,11 +212,8 @@ function Registro() {
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="success">
-          <AlertTitle>Success</AlertTitle>
-          <Typography variant="body1">
-            Registered with success! Check your e-mail for a confirmation
-            message.
-          </Typography>
+          <AlertTitle>Sucesso</AlertTitle>
+          <Typography variant="body1">Registrado com sucesso!</Typography>
         </Alert>
       </Snackbar>
     </div>

@@ -58,9 +58,8 @@ function Participantes() {
             <Table className={classes.table} aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCellTitle>Name</StyledTableCellTitle>
-                  <StyledTableCellTitle>Affiliation</StyledTableCellTitle>
-                  <StyledTableCellTitle>Country</StyledTableCellTitle>
+                  <StyledTableCellTitle>Nome</StyledTableCellTitle>
+                  <StyledTableCellTitle>Instituição</StyledTableCellTitle>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -75,9 +74,6 @@ function Participantes() {
                     </StyledTableCell>
                     <StyledTableCell className={classes.tableCell}>
                       {row.institute}
-                    </StyledTableCell>
-                    <StyledTableCell className={classes.tableCell}>
-                      {row.country}
                     </StyledTableCell>
                   </StyledTableRow>
                 ))}

@@ -7,15 +7,15 @@ export const postSubscription = ({
   name,
   email,
   institute,
-  newsletter,
-  country,
+  occupation,
+  certificate,
 }) => {
   const params = {
     name,
     email,
     institute,
-    newsletter_permission: newsletter,
-    country,
+    occupation,
+    certificate,
   };
 
   return axios.post('/subscription/', params).then((res) => res);
@@ -27,15 +27,6 @@ export const getSubscriptions = () => {
 
   return axios
     .get('/subscription/', { params })
-    .catch((err) => err)
-    .then((res) => res.data);
-};
-
-export const getVerifyEmail = ({ uid, token }) => {
-  const params = { uid, token };
-
-  return axios
-    .get('/subscription/verify_email/', { params })
     .catch((err) => err)
     .then((res) => res.data);
 };
