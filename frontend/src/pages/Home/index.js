@@ -1,12 +1,9 @@
 import React from 'react';
 import { Grid, Container, Typography } from '@material-ui/core';
-import styles from './styles';
 
-function Main() {
-  const classes = styles();
-
+function Home() {
   // Change dynamically the page title:
-  document.title = 'LIneA Course | Home';
+  document.title = 'LIneA Minicurso | Início';
 
   return (
     <div>
@@ -15,126 +12,39 @@ function Main() {
           <Grid item xs={12}>
             <Typography
               variant="h3"
+              component="h1"
               align="center"
               color="primary"
-              className={classes.title}
             >
-              Online Course
+              LIneA Minicurso
             </Typography>
             <br />
-            <Typography
-              variant="h4"
-              align="center"
-              color="primary"
-              className={classes.subtitle}
-            >
-              On the Future of Data Centers and eScience Institutes
-            </Typography>
-            <Typography
-              variant="h4"
-              align="center"
-              color="primary"
-              className={classes.subtitle}
-            >
-              Celebrating LIneA’s 10th Anniversary
+            <Typography variant="h4" align="center" color="primary">
+              Introdução a ferramentas computacionais aplicadas à Astronomia
             </Typography>
             <br />
-            <Typography
-              variant="h5"
-              align="center"
-              color="primary"
-              className={classes.date}
-            >
-              April 13-15, 2021
+            <Typography variant="h5" align="center" color="primary">
+              O LIneA abre as inscrições para o primeiro módulo do minicurso
+              &ldquo;
+              <strong>
+                Introdução a ferramentas computacionais aplicadas à Astronomia
+              </strong>
+              &rdquo; a nível de doutorado e pós-doutorado, totalmente gratuito.
             </Typography>
             <br />
             <br />
-            <Grid container spacing={3} justify="center">
-              <Grid item xs={12} md={6}>
-                <Typography
-                  variant="h5"
-                  align="center"
-                  color="primary"
-                  className={classes.blockTitle}
-                >
-                  International Organizing Committee
-                </Typography>
-                <br />
-                <br />
-                <div>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    Andreas Wicenec (ICRAR/UWA)
-                  </Typography>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    Fabio Hernandez (IN2P3/CNRS)
-                  </Typography>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    George Beckett (University of Edinburg)
-                  </Typography>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    Mario Juric (DIRAC/University of Washington)
-                  </Typography>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    William O’Mullane (LSST/Vera C. Rubin Observatory)
-                  </Typography>
-                </div>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <Typography
-                  variant="h5"
-                  align="center"
-                  color="primary"
-                  className={classes.blockTitle}
-                >
-                  Local Organizing Committee
-                </Typography>
-                <br />
-                <br />
-                <div>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    Carlos Adean (LIneA)
-                  </Typography>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    Mariana Fernandes (LIneA)
-                  </Typography>
-                  <Typography
-                    align="center"
-                    color="primary"
-                    className={classes.blockText}
-                  >
-                    Rodrigo Boufleur (ON/LIneA)
-                  </Typography>
-                </div>
-              </Grid>
-            </Grid>
+            <Typography variant="h5" align="center" color="primary">
+              Responsável: Dr. Adriano Pieres
+            </Typography>
+            <Typography variant="h5" align="center" color="primary">
+              Período de inscrição: xx/04 até xx/05
+            </Typography>
+            <Typography variant="h5" align="center" color="primary">
+              Total de vagas: 30
+            </Typography>
+            <Typography variant="h5" align="center" color="primary">
+              Duração: 4 horas
+            </Typography>
           </Grid>
         </Grid>
       </Container>
@@ -142,4 +52,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;

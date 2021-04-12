@@ -2,14 +2,13 @@ import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import Route from './Route';
 import Home from '../pages/Home';
-import Registration from '../pages/Registration';
-import RegistrationSuccess from '../pages/Registration/Success';
-import Speakers from '../pages/Speakers';
-import Participants from '../pages/Participants';
-import AdditionalInformation from '../pages/AdditionalInformation';
-import VerifyEmail from '../pages/VerifyEmail';
+import Ementa from '../pages/Ementa';
+import Programacao from '../pages/Programacao';
+import Registro from '../pages/Registro';
+import Participantes from '../pages/Participantes';
+import Informacoes from '../pages/Informacoes';
 import Plots from '../pages/Plots';
-import Notfound from '../pages/NotFound';
+import NotFound from '../pages/NotFound';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import useStyles from './styles';
@@ -23,26 +22,13 @@ export default function Routes() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/registration" component={Registration} />
-          <Route
-            exact
-            path="/registration/success"
-            component={RegistrationSuccess}
-          />
-          <Route exact path="/speakers" component={Speakers} />
-          <Route exact path="/participants" component={Participants} />
-          <Route
-            exact
-            path="/additional-information"
-            component={AdditionalInformation}
-          />
-          <Route
-            exact
-            path="/verify-email/uid=:uid/token=:token"
-            component={VerifyEmail}
-          />
+          <Route exact path="/ementa" component={Ementa} />
+          <Route exact path="/programacao" component={Programacao} />
+          <Route exact path="/registro" component={Registro} />
+          <Route exact path="/participantes" component={Participantes} />
+          <Route exact path="/informacoes-adicionais" component={Informacoes} />
           <Route isPrivate exact path="/plots" component={Plots} />
-          <Route component={Notfound} />
+          <Route component={NotFound} />
         </Switch>
         <Footer />
       </div>

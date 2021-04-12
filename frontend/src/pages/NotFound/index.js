@@ -11,9 +11,9 @@ import {
 import { YouTube, Twitter, GitHub } from '@material-ui/icons';
 import styles from './styles';
 
-function AboutUs() {
+function NotFound() {
   // Change dynamically the page title:
-  document.title = 'LIneA Course | About';
+  document.title = 'LIneA Minicurso | 404: Página Não Encontrada';
 
   const handlerClick = (socialMedia) => {
     let uri = '';
@@ -37,67 +37,57 @@ function AboutUs() {
   return (
     <Container>
       <Grid item xs={12}>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
-            Home
-          </Link>
-          <Typography color="primary">Not Found</Typography>
-        </Breadcrumbs>
-        <>
-          <div className={classes.notfound}>
-            <Typography variant="h1" className={classes.title}>
-              404
-            </Typography>
-            <Typography variant="h2" className={classes.subTitle}>
-              Oops! Nothing was found
-            </Typography>
-            <Typography variant="subtitle1" className={classes.description}>
-              The page you are looking for might have been removed, had its name
-              changed or is temporarily unavailable.{' '}
-              <Link color="inherit" className={classes.returnPage} href="/">
-                Return to homepage
-              </Link>
-            </Typography>
-            <>
-              <IconButton
-                className={classes.icon}
-                onClick={() => {
-                  handlerClick('Youtube');
-                }}
-                color="inherit"
-                aria-label="YouTube"
-                component="span"
-              >
-                <YouTube />
-              </IconButton>
-              <IconButton
-                className={classes.icon}
-                onClick={() => {
-                  handlerClick('Twitter');
-                }}
-                color="inherit"
-                aria-label="Twitter"
-                component="span"
-              >
-                <Twitter />
-              </IconButton>
-              <IconButton
-                className={classes.icon}
-                onClick={() => {
-                  handlerClick('GitHub');
-                }}
-                color="inherit"
-                aria-label="GitHub"
-                component="span"
-              >
-                <GitHub />
-              </IconButton>
-            </>
-          </div>
-        </>
+        <div className={classes.notfound}>
+          <Typography variant="h1" className={classes.title}>
+            404
+          </Typography>
+          <Typography variant="h2" className={classes.subTitle}>
+            Oops! Nada foi encontrado
+          </Typography>
+          <Typography variant="subtitle1" className={classes.description}>
+            A página que você está procurando pode ter sido removida, teve seu
+            nome alterado ou está temporariamente indisponível.{' '}
+            <Link color="inherit" className={classes.returnPage} href="/">
+              Retornar para o início
+            </Link>
+          </Typography>
+          <IconButton
+            className={classes.icon}
+            onClick={() => {
+              handlerClick('Youtube');
+            }}
+            color="inherit"
+            aria-label="YouTube"
+            component="span"
+          >
+            <YouTube />
+          </IconButton>
+          <IconButton
+            className={classes.icon}
+            onClick={() => {
+              handlerClick('Twitter');
+            }}
+            color="inherit"
+            aria-label="Twitter"
+            component="span"
+          >
+            <Twitter />
+          </IconButton>
+          <IconButton
+            className={classes.icon}
+            onClick={() => {
+              handlerClick('GitHub');
+            }}
+            color="inherit"
+            aria-label="GitHub"
+            component="span"
+          >
+            <GitHub />
+          </IconButton>
+        </div>
       </Grid>
     </Container>
   );
 }
 
-export default AboutUs;
+export default NotFound;

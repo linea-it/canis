@@ -16,24 +16,28 @@ function Header() {
 
   const menus = [
     {
-      description: 'Home',
+      description: 'Início',
       href: '/',
     },
     {
-      description: 'Registration',
-      href: '/registration',
+      description: 'Ementa',
+      href: '/ementa',
     },
     {
-      description: 'Speakers',
-      href: '/speakers',
+      description: 'Programação',
+      href: '/programacao',
     },
     {
-      description: 'Participants',
-      href: '/participants',
+      description: 'Registro',
+      href: '/registro',
     },
     {
-      description: 'Additional Information',
-      href: '/additional-information',
+      description: 'Participantes',
+      href: '/participantes',
+    },
+    {
+      description: 'Informações Adicionais',
+      href: '/informacoes-adicionais',
     },
   ];
 

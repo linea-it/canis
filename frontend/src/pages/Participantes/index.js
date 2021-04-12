@@ -11,9 +11,9 @@ import Paper from '@material-ui/core/Paper';
 import styles from './styles';
 import { getSubscriptions } from '../../services/api';
 
-function Participants() {
+function Participantes() {
   // Change dynamically the page title:
-  document.title = 'LIneA Course | Participants';
+  document.title = 'LIneA Minicurso | Participantes';
   const classes = styles();
   const [subscription, setSubscription] = useState([]);
 
@@ -49,7 +49,7 @@ function Participants() {
     <Container className={classes.container}>
       <Grid item xs={12}>
         <Typography variant="h3" align="center" color="primary">
-          Participants
+          Participantes
         </Typography>
         <br />
         <br />
@@ -90,4 +90,4 @@ function Participants() {
   );
 }
 
-export default Participants;
+export default Participantes;

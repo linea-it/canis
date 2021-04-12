@@ -12,16 +12,15 @@ import {
   Checkbox,
   CircularProgress,
 } from '@material-ui/core';
-import { Alert, AlertTitle, Autocomplete } from '@material-ui/lab';
+import { Alert, AlertTitle } from '@material-ui/lab';
 import EmailIcon from '@material-ui/icons/Email';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './styles';
-import countries from './countries.json';
 import { postSubscription } from '../../services/api';
 
-function Registration() {
+function Registro() {
   // Change dynamically the page title:
-  document.title = 'LIneA Course | Registration';
+  document.title = 'LIneA Course | Registro';
 
   const classes = styles();
 
@@ -48,33 +47,13 @@ function Registration() {
       const name = formRef.current.name.value;
       const email = formRef.current.email.value;
       const institute = formRef.current.institute.value;
-      const country = formRef.current.country.value;
       const newsletter = formRef.current.newsletter.checked;
 
-      // Check if the filled country is available in the options.
-      // Prevent it from submitting undesirable values:
-      if (countries.filter((c) => c.label === country).length === 0) {
-        setErrorMessage({
-          country: ['Please, select one of the country options!'],
-        });
-
-        // Forcing the Autocomplete component to reset:
-        autocompleteRef.current
-          .getElementsByClassName('MuiAutocomplete-clearIndicator')[0]
-          .click();
-
-        return;
-      }
-
-      postSubscription({ name, email, institute, newsletter, country })
+      postSubscription({ name, email, institute, newsletter })
         .then(() => {
           setOpenFormFeedback(true);
           // Reseting form:
           formRef.current.reset();
-          // Forcing the Autocomplete component to reset:
-          autocompleteRef.current
-            .getElementsByClassName('MuiAutocomplete-clearIndicator')[0]
-            .click();
 
           // Forcing the reCAPTCHA to reset:
           recaptchaRef.current.reset();
@@ -82,32 +61,11 @@ function Registration() {
           // Forcing the Newsletter checkbox to reset:
           formRef.current.newsletter.checked = false;
 
-          try {
-            window.ga('send', {
-              hitType: 'event',
-              eventCategory: 'Subscription',
-              eventAction: 'subscript',
-              eventLabel: 'Subscription Success',
-            });
-          } catch (err) {
-            console.log("Couldn't fire GA event", err);
-          }
           setIsLoading(false);
-          history.push('/registration/success');
+          history.push('/registro/participantes/');
         })
         .catch((error) => {
           setErrorMessage(error.response.data);
-
-          try {
-            window.ga('send', {
-              hitType: 'event',
-              eventCategory: 'Subscription',
-              eventAction: 'subscript',
-              eventLabel: 'Subscription Failure',
-            });
-          } catch (err) {
-            console.log(err);
-          }
         });
     }
   };
@@ -124,45 +82,23 @@ function Registration() {
         <Grid item xs={12}>
           <Grid item xs={11} md={6} className={classes.grid}>
             <Typography variant="h3" align="center" color="primary">
-              Registration
+              Registro
             </Typography>
-            {/* <Typography
-              variant="body1"
-              align="center"
-              color="primary"
-              gutterBottom
-              className={classes.strike}
-            >
-              (Open until April 2nd, 2021)
-            </Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              color="primary"
-              gutterBottom
-            >
-              (The deadline for registration has been extended to April 9th,
-              2021)
-            </Typography>
-            <Typography variant="button" color="error" gutterBottom paragraph>
-              After submission, you will receive a confirmation email with the
-              link to complete your registration.
-            </Typography> */}
             <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
               <div className={classes.textFields}>
                 <TextField
                   required
-                  id="name"
+                  id="full_name"
                   type="text"
                   variant="outlined"
-                  label="Name"
-                  name="name"
-                  placeholder="Name"
+                  label="Nome Completo"
+                  name="full_name"
+                  placeholder="Nome Completo"
                   fullWidth
                   size="small"
-                  error={'name' in errorMessage}
+                  error={'full_name' in errorMessage}
                   helperText={
-                    'name' in errorMessage ? errorMessage.name[0] : ''
+                    'full_name' in errorMessage ? errorMessage.full_name[0] : ''
                   }
                 />
               </div>
@@ -175,7 +111,6 @@ function Registration() {
                   variant="outlined"
                   label="E-mail"
                   name="email"
-                  placeholder="E-mail"
                   fullWidth
                   size="small"
                   error={'email' in errorMessage}
@@ -191,9 +126,8 @@ function Registration() {
                   id="institute"
                   type="text"
                   variant="outlined"
-                  label="Affiliation"
+                  label="Instituição"
                   name="institute"
-                  placeholder="Subject"
                   fullWidth
                   size="small"
                   error={'institute' in errorMessage}
@@ -204,40 +138,37 @@ function Registration() {
               </div>
 
               <div className={classes.textFields}>
-                <Autocomplete
-                  ref={autocompleteRef}
-                  options={countries}
-                  getOptionLabel={(option) => option.label}
-                  autoComplete={false}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      required
-                      id="country"
-                      name="country"
-                      label="Country"
-                      variant="outlined"
-                      placeholder="Countries"
-                      autoComplete="off"
-                      fullWidth
-                      size="small"
-                      error={'country' in errorMessage}
-                      helperText={
-                        'country' in errorMessage ? errorMessage.country[0] : ''
-                      }
-                    />
-                  )}
+                <TextField
+                  required
+                  id="occupation_area"
+                  type="text"
+                  variant="outlined"
+                  label="Area de Atuação"
+                  name="occupation_area"
+                  fullWidth
+                  size="small"
+                  error={'occupation_area' in errorMessage}
+                  helperText={
+                    'occupation_area' in errorMessage
+                      ? errorMessage.occupation_area[0]
+                      : ''
+                  }
                 />
               </div>
 
               <FormControlLabel
-                label="Subscribe to LIneA News"
+                label="Gostaria de certificado?"
                 labelPlacement="start"
                 className={classes.checkboxLabel}
                 control={<Checkbox name="newsletter" />}
               />
 
-              <Grid container spacing={2} alignItems="flex-end">
+              <Grid
+                container
+                spacing={2}
+                direction="column"
+                alignItems="flex-start"
+              >
                 <Grid item xs={12} md={10}>
                   {recaptchaKey ? (
                     <ReCAPTCHA
@@ -293,4 +224,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default Registro;

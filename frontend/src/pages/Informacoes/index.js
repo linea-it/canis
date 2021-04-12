@@ -2,9 +2,9 @@ import React from 'react';
 import { Grid, Container, Typography } from '@material-ui/core';
 import styles from './styles';
 
-function AdditionalInformation() {
+function Informacoes() {
   // Change dynamically the page title:
-  document.title = 'LIneA Course | Additional Information';
+  document.title = 'LIneA Minicurso | Informações Adicionais';
 
   const classes = styles();
   return (
@@ -121,4 +121,4 @@ function AdditionalInformation() {
   );
 }
 
-export default AdditionalInformation;
+export default Informacoes;
