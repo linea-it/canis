@@ -26,7 +26,6 @@ function Registro() {
 
   const history = useHistory();
   const formRef = useRef();
-  const autocompleteRef = useRef();
   const recaptchaRef = useRef();
 
   const recaptchaKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
