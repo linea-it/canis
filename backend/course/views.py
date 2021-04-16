@@ -17,12 +17,13 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
 
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
-    filter_fields = ('id', 'name', 'email', 'institute', 'occupation',
-                     'certificate', 'creation_date',)
+    filter_fields = ('id', 'name', 'email', 'institute', 'education',
+                     'occupation', 'certificate', 'creation_date',)
 
-    search_fields = ('id', 'name', 'email', 'institute', 'occupation',)
-    ordering_fields = ('id', 'name', 'email', 'institute', 'occupation',
-                       'certificate', 'creation_date',)
+    search_fields = ('id', 'name', 'email', 'institute',
+                     'education', 'occupation',)
+    ordering_fields = ('id', 'name', 'email', 'institute', 'education',
+                       'occupation', 'certificate', 'creation_date',)
     ordering = ('id',)
 
     # Export participants to CSV:
@@ -38,6 +39,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
             'name',
             'email',
             'institute',
+            'education',
             'occupation',
             'certificate',
             'creation_date',
@@ -48,6 +50,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
             'name',
             'email',
             'institute',
+            'education',
             'occupation',
             'certificate',
             'creation_date',

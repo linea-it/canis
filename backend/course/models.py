@@ -20,6 +20,12 @@ class Subscription(models.Model):
         max_length=150,
     )
 
+    # Education
+    education = models.CharField(
+        verbose_name="Education",
+        max_length=150,
+    )
+
     # Institute
     occupation = models.CharField(
         verbose_name="Occupation Area",

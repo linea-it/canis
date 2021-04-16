@@ -12,6 +12,7 @@ class SubscriptionSerializer(serializers.ModelSerializer):
             'name',
             'email',
             'institute',
+            'education',
             'occupation',
             'certificate',
             'creation_date',
