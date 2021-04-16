@@ -20,8 +20,12 @@ function Home() {
             </Typography>
             <br />
             <Typography variant="h4" align="center" color="primary">
-              Introdução a ferramentas computacionais aplicadas à Astronomia
+              Introdução a ferramentas computacionais aplicadas à e-Astronomia
             </Typography>
+            <Typography variant="h6" align="center" color="primary">
+              (Projeto Piloto)
+            </Typography>
+            <br />
             <br />
             <Typography variant="h5" align="center" color="primary">
               O LIneA abre as inscrições para o primeiro módulo do minicurso
@@ -32,12 +36,11 @@ function Home() {
               &rdquo; a nível de doutorado e pós-doutorado, totalmente gratuito.
             </Typography>
             <br />
-            <br />
             <Typography variant="h5" align="center" color="primary">
               Responsável: Dr. Adriano Pieres
             </Typography>
             <Typography variant="h5" align="center" color="primary">
-              Período de inscrição: xx/04 até xx/05
+              Período de inscrição: 19/04 até 30/04
             </Typography>
             <Typography variant="h5" align="center" color="primary">
               Total de vagas: 30

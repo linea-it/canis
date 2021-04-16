@@ -33,7 +33,7 @@ function Informacoes() {
               que vem sendo desenvolvido pelo LIneA. Sendo assim, nossa equipe
               vem planejando e desenvolvendo o minicurso básico &ldquo;
               <strong>
-                Introdução a ferramentas computacionais aplicadas à Astronomia
+                Introdução a ferramentas computacionais aplicadas à e-Astronomia
               </strong>
               &rdquo;. O objetivo principal é preparar a comunidade para as
               novas ferramentas e serviços que em breve serão disponibilizadas
@@ -73,9 +73,10 @@ function Informacoes() {
               color="primary"
               gutterBottom
             >
-              O módulo será ministrado pelo Dr. Adriano Pieres e está
-              estruturado para ser apresentado em duas aulas, uma por semana,
-              com carga horária total de 4 horas (programação).
+              O responsável pela aplicação do módulo é o Dr. Adriano Pieres, e
+              está estruturado para ser apresentado em duas aulas, uma por
+              semana, com <a href="/programa">carga horária total de 4 horas</a>
+              .
             </Typography>
             <br />
             <Typography
@@ -85,8 +86,9 @@ function Informacoes() {
               gutterBottom
             >
               Em sua primeira aplicação, o público alvo destinado para o
-              minicurso são doutores/doutorandos e pós-doutores com um número
-              limitado de <strong>30 vagas</strong>.
+              minicurso são para pessoas que estejam cursando ou que já tenham
+              finalizado o doutorado e o pós-doutorado, com um número limitado
+              de <strong>30 vagas</strong>.
             </Typography>
             <br />
             <Typography
@@ -96,7 +98,7 @@ function Informacoes() {
               gutterBottom
             >
               O período de inscrição acontece entre os dias{' '}
-              <strong>XX de abril</strong> até <strong>XX de maio</strong>.
+              <strong>19 de abril</strong> até <strong>30 de abril</strong>.
             </Typography>
             <br />
             <Typography
@@ -115,8 +117,8 @@ function Informacoes() {
               color="primary"
               gutterBottom
             >
-              Serão emitidos certificados àqueles que solicitaram ao se
-              inscrever no minicurso (inscrição).
+              Serão emitidos certificados àqueles que solicitaram no momento da{' '}
+              <a href="/registro">inscrição do minicurso</a>.
             </Typography>
             <br />
             <Typography

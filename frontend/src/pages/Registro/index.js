@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Grid,
   Container,
@@ -20,6 +21,7 @@ function Registro() {
   // Change dynamically the page title:
   document.title = 'LIneA Course | Registro';
 
+  const history = useHistory();
   const classes = styles();
   const formRef = useRef();
   const recaptchaRef = useRef();
@@ -42,10 +44,18 @@ function Registro() {
       const name = formRef.current.name.value;
       const email = formRef.current.email.value;
       const institute = formRef.current.institute.value;
+      const education = formRef.current.education.value;
       const occupation = formRef.current.occupation.value;
       const certificate = formRef.current.certificate.checked;
 
-      postSubscription({ name, email, institute, occupation, certificate })
+      postSubscription({
+        name,
+        email,
+        institute,
+        education,
+        occupation,
+        certificate,
+      })
         .then(() => {
           setOpenFormFeedback(true);
           // Reseting form:
@@ -58,6 +68,8 @@ function Registro() {
           formRef.current.certificate.checked = false;
 
           setIsLoading(false);
+
+          history.push('/participantes');
         })
         .catch((error) => {
           setErrorMessage(error.response.data);
@@ -76,14 +88,18 @@ function Registro() {
       <Container align="center">
         <Grid item xs={12}>
           <Grid item xs={11} md={6} className={classes.grid}>
-            <Typography
-              variant="h3"
-              align="center"
-              color="primary"
-              gutterBottom
-            >
+            <Typography variant="h3" align="center" color="primary">
               Registro
             </Typography>
+            <Typography
+              variant="subtitle2"
+              align="center"
+              color="error"
+              gutterBottom
+            >
+              (A inscrição não garante a vaga)
+            </Typography>
+            <br />
             <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
               <div className={classes.textFields}>
                 <TextField
@@ -132,6 +148,23 @@ function Registro() {
                   error={'institute' in errorMessage}
                   helperText={
                     'institute' in errorMessage ? errorMessage.institute[0] : ''
+                  }
+                />
+              </div>
+
+              <div className={classes.textFields}>
+                <TextField
+                  required
+                  id="education"
+                  type="text"
+                  variant="outlined"
+                  label="Formação"
+                  name="education"
+                  fullWidth
+                  size="small"
+                  error={'education' in errorMessage}
+                  helperText={
+                    'education' in errorMessage ? errorMessage.education[0] : ''
                   }
                 />
               </div>

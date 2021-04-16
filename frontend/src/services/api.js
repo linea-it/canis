@@ -7,6 +7,7 @@ export const postSubscription = ({
   name,
   email,
   institute,
+  education,
   occupation,
   certificate,
 }) => {
@@ -14,6 +15,7 @@ export const postSubscription = ({
     name,
     email,
     institute,
+    education,
     occupation,
     certificate,
   };
@@ -23,7 +25,7 @@ export const postSubscription = ({
 
 export const getSubscriptions = () => {
   // Only considering participants that were activated:
-  const params = { is_active: true, pageSize: 99999 };
+  const params = { pageSize: 99999 };
 
   return axios
     .get('/subscription/', { params })

@@ -24,7 +24,7 @@ function Programacao() {
         </Grid>
         <Grid item xs={12} sm={6} md={5} style={{ width: '100%' }}>
           <Typography variant="h6" color="primary">
-            xx/05 | 9h às 11h
+            04/05 | 9h às 11h
           </Typography>
           <Typography variant="subtitle1" color="primary">
             <strong>Aula 1</strong>: Introdução e apresentação da plataforma e
@@ -36,7 +36,7 @@ function Programacao() {
         </Grid>
         <Grid item xs={12} sm={6} md={5} style={{ width: '100%' }}>
           <Typography variant="h6" color="primary">
-            xx/05 | 9h às 11h
+            11/05 | 9h às 11h
           </Typography>
           <Typography variant="subtitle1" color="primary">
             <strong>Aula 2</strong>: Hands on
