@@ -20,12 +20,12 @@ function Header() {
       href: '/',
     },
     {
-      description: 'Ementa',
-      href: '/ementa',
+      description: 'Programa',
+      href: '/programa',
     },
     {
-      description: 'Programação',
-      href: '/programacao',
+      description: 'Horário',
+      href: '/horario',
     },
     {
       description: 'Registro',

@@ -159,6 +159,7 @@ function Registro() {
                   type="text"
                   variant="outlined"
                   label="Formação"
+                  placeholder="2º Ano do Doutorado"
                   name="education"
                   fullWidth
                   size="small"
@@ -172,10 +173,28 @@ function Registro() {
               <div className={classes.textFields}>
                 <TextField
                   required
+                  id="position"
+                  type="text"
+                  variant="outlined"
+                  label="Posição atual"
+                  placeholder="Mestrando"
+                  name="position"
+                  fullWidth
+                  size="small"
+                  error={'position' in errorMessage}
+                  helperText={
+                    'position' in errorMessage ? errorMessage.position[0] : ''
+                  }
+                />
+              </div>
+
+              <div className={classes.textFields}>
+                <TextField
+                  required
                   id="occupation"
                   type="text"
                   variant="outlined"
-                  label="Area de atuação"
+                  label="Área de atuação"
                   name="occupation"
                   fullWidth
                   size="small"

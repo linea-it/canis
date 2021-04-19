@@ -19,7 +19,7 @@ function Home() {
               Minicurso
             </Typography>
             <Typography variant="h6" align="center" color="primary">
-              (Projeto Piloto)
+              (Edição Piloto)
             </Typography>
             <br />
             <Typography variant="h4" align="center" color="primary">
@@ -30,18 +30,22 @@ function Home() {
             <br />
             <br />
             <Typography variant="h5" align="center" color="primary">
-              O LIneA abre as inscrições para o primeiro módulo do minicurso a
-              nível de doutorado e pós-doutorado, totalmente gratuito.
+              Módulo I - LIneA Science Server
             </Typography>
-            <br />
+            <Typography variant="h5" align="center" color="primary">
+              Público alvo: estudantes de Pós-Graduação e Pós-Doutorandos
+            </Typography>
             <Typography variant="h5" align="center" color="primary">
               Responsável: Dr. Adriano Pieres
             </Typography>
             <Typography variant="h5" align="center" color="primary">
-              Período de inscrição: 19/04 até 30/04
+              Inscrição: até 30/04/21
             </Typography>
             <Typography variant="h5" align="center" color="primary">
-              Total de vagas: 30
+              Curso gratuito e online
+            </Typography>
+            <Typography variant="h5" align="center" color="primary">
+              Total de vagas: 15
             </Typography>
             <Typography variant="h5" align="center" color="primary">
               Duração: 4 horas

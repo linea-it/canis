@@ -59,6 +59,7 @@ function Participantes() {
               <TableHead>
                 <TableRow>
                   <StyledTableCellTitle>Nome</StyledTableCellTitle>
+                  <StyledTableCellTitle>Posição Atual</StyledTableCellTitle>
                   <StyledTableCellTitle>Instituição</StyledTableCellTitle>
                 </TableRow>
               </TableHead>
@@ -71,6 +72,9 @@ function Participantes() {
                       className={classes.tableCell}
                     >
                       {row.name}
+                    </StyledTableCell>
+                    <StyledTableCell className={classes.tableCell}>
+                      {row.position}
                     </StyledTableCell>
                     <StyledTableCell className={classes.tableCell}>
                       {row.institute}
