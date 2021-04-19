@@ -45,6 +45,7 @@ function Registro() {
       const email = formRef.current.email.value;
       const institute = formRef.current.institute.value;
       const education = formRef.current.education.value;
+      const position = formRef.current.position.value;
       const occupation = formRef.current.occupation.value;
       const certificate = formRef.current.certificate.checked;
 
@@ -53,6 +54,7 @@ function Registro() {
         email,
         institute,
         education,
+        position,
         occupation,
         certificate,
       })

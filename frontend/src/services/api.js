@@ -8,6 +8,7 @@ export const postSubscription = ({
   email,
   institute,
   education,
+  position,
   occupation,
   certificate,
 }) => {
@@ -16,6 +17,7 @@ export const postSubscription = ({
     email,
     institute,
     education,
+    position,
     occupation,
     certificate,
   };

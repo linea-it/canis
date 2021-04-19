@@ -61,6 +61,7 @@ function Participantes() {
                   <StyledTableCellTitle>Nome</StyledTableCellTitle>
                   <StyledTableCellTitle>Posição Atual</StyledTableCellTitle>
                   <StyledTableCellTitle>Instituição</StyledTableCellTitle>
+                  <StyledTableCellTitle>Área de Ocupação</StyledTableCellTitle>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -78,6 +79,9 @@ function Participantes() {
                     </StyledTableCell>
                     <StyledTableCell className={classes.tableCell}>
                       {row.institute}
+                    </StyledTableCell>
+                    <StyledTableCell className={classes.tableCell}>
+                      {row.occupation}
                     </StyledTableCell>
                   </StyledTableRow>
                 ))}
