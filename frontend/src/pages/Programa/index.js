@@ -1,7 +1,9 @@
 import React from 'react';
 import { Grid, Container, Typography } from '@material-ui/core';
+import styles from './styles';
 
 function Programa() {
+  const classes = styles();
   // Change dynamically the page title:
   document.title = 'LIneA Minicurso | Programa';
 
@@ -19,7 +21,12 @@ function Programa() {
               Programa
             </Typography>
             <br />
-            <Typography variant="body1" align="justify" color="primary">
+            <Typography
+              variant="body1"
+              className={classes.bodyTextBigger}
+              align="justify"
+              color="primary"
+            >
               O primeiro módulo do minicurso organizado pelo LineA vai mostrar
               as funcionalidades do{' '}
               <a
@@ -35,7 +42,12 @@ function Programa() {
               release público DR2.
             </Typography>
             <br />
-            <Typography variant="body1" align="justify" color="primary">
+            <Typography
+              variant="body1"
+              className={classes.bodyTextBigger}
+              align="justify"
+              color="primary"
+            >
               O minicurso vai ser dividido em duas aulas. Na primeira aula, será
               feita uma breve introdução do levantamento fotométrico conduzido
               ao longo de seis anos pelo projeto DES cobrindo de 5 mil graus
@@ -53,7 +65,12 @@ function Programa() {
               observar os objetos desta lista, por exemplo.
             </Typography>
             <br />
-            <Typography variant="body1" align="justify" color="primary">
+            <Typography
+              variant="body1"
+              className={classes.bodyTextBigger}
+              align="justify"
+              color="primary"
+            >
               Na segunda aula, o participante irá utilizar as ferramentas
               disponíveis para realizar os exercícios propostos. A turma será
               dividida em grupos menores onde tutores poderão tirar dúvidas a
@@ -61,7 +78,12 @@ function Programa() {
               dos exercícios serão apresentados a todos os participantes.
             </Typography>
             <br />
-            <Typography variant="body1" align="justify" color="primary">
+            <Typography
+              variant="body1"
+              className={classes.bodyTextBigger}
+              align="justify"
+              color="primary"
+            >
               A proposta do minicurso do LineA é estimular a exploração
               científica do acervo de dados dos projetos SDSS e DES atualmente
               mantidos pelo LIneA e futuramente do Legacy Survey of Space and
