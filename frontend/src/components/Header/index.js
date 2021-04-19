@@ -32,10 +32,6 @@ function Header() {
       href: '/registro',
     },
     {
-      description: 'Participantes',
-      href: '/participantes',
-    },
-    {
       description: 'Informações Adicionais',
       href: '/informacoes-adicionais',
     },

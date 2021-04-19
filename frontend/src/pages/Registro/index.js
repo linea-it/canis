@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import {
   Grid,
   Container,
@@ -21,7 +20,6 @@ function Registro() {
   // Change dynamically the page title:
   document.title = 'LIneA Course | Registro';
 
-  const history = useHistory();
   const classes = styles();
   const formRef = useRef();
   const recaptchaRef = useRef();
@@ -70,8 +68,6 @@ function Registro() {
           formRef.current.certificate.checked = false;
 
           setIsLoading(false);
-
-          history.push('/participantes');
         })
         .catch((error) => {
           setErrorMessage(error.response.data);
@@ -99,7 +95,8 @@ function Registro() {
               color="error"
               gutterBottom
             >
-              (A inscrição não garante a vaga)
+              (As vagas serão concedidas aos 15 primeiros inscritos,
+              satisfazendo o critério anunciado)
             </Typography>
             <br />
             <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
