@@ -63,8 +63,8 @@ function Informacoes() {
             >
               A abordagem de apresentação deste módulo visa demonstrar as
               ferramentas que estão disponíveis na plataforma do{' '}
-              <em>LIneA Science Server</em> (<a href="/programa">ementa</a>) e
-              seu uso através de atividades a serem realizadas pelos
+              <em>LIneA Science Server</em> (<a href="/programa">programação</a>
+              ) e seu uso através de atividades a serem realizadas pelos
               participantes.
             </Typography>
             <br />
