@@ -68,8 +68,8 @@ function Informacoes() {
             >
               A abordagem de apresentação deste módulo visa demonstrar as
               ferramentas que estão disponíveis na plataforma do{' '}
-              <em>LIneA Science Server</em> (<a href="/programa">programação</a>
-              ) e seu uso através de atividades a serem realizadas pelos
+              <em>LIneA Science Server</em> (<a href="/programa">programa</a>) e
+              seu uso através de atividades a serem realizadas pelos
               participantes.
             </Typography>
             <br />
@@ -82,7 +82,7 @@ function Informacoes() {
             >
               O Dr. Adriano Pieres é responsável pela aplicação do módulo que
               está estruturado para ser apresentado em duas aulas, uma por
-              semana, <a href="/horário">com carga horária total de 4 horas</a>.
+              semana, <a href="/horario">com carga horária total de 4 horas</a>.
             </Typography>
             <br />
             <Typography
