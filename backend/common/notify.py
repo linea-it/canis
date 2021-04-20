@@ -44,7 +44,7 @@ class Notify():
         self.logger.debug("TO: %s" % to)
 
         # Subject
-        subject = ("LIneA Course - %s" % (subject))
+        subject = ("LIneA Minicurso - %s" % (subject))
 
         self.logger.debug("SUBJECT: %s" % subject)
 

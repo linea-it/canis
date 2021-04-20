@@ -211,7 +211,7 @@ if HOST_URL is not None:
     LOGOUT_REDIRECT_URL = HOST_URL
     LOGIN_REDIRECT_URL = HOST_URL
 
-APPLICATION_NAME = 'LIneA Course'
+APPLICATION_NAME = 'LIneA Minicurso'
 
 # Emails
 # Notifications Email

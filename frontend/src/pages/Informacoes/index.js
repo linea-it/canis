@@ -125,7 +125,7 @@ function Informacoes() {
               gutterBottom
             >
               Serão emitidos certificados àqueles que solicitaram no momento da{' '}
-              <a href="/registro">inscrição do minicurso</a>.
+              <a href="/registro">inscrição</a>.
             </Typography>
             <br />
             <Typography
