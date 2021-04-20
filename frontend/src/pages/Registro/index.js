@@ -28,8 +28,7 @@ function Registro() {
 
   const [openFormFeedback, setOpenFormFeedback] = useState(false);
   const [errorMessage, setErrorMessage] = useState({});
-  const [submitEnabled, setSubmitEnabled] = useState(true);
-  // const [submitEnabled, setSubmitEnabled] = useState(!recaptchaKey);
+  const [submitEnabled, setSubmitEnabled] = useState(!recaptchaKey);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClose = () => setOpenFormFeedback(false);
@@ -62,13 +61,11 @@ function Registro() {
           // Reseting form:
           formRef.current.reset();
 
-          // // Forcing the reCAPTCHA to reset:
-          // recaptchaRef.current.reset();
+          // Forcing the reCAPTCHA to reset:
+          recaptchaRef.current.reset();
 
           // Forcing the Newsletter checkbox to reset:
           formRef.current.certificate.checked = false;
-
-          console.log('formRef.current', formRef.current);
 
           setIsLoading(false);
         })
@@ -222,7 +219,7 @@ function Registro() {
                 direction="column"
                 alignItems="flex-start"
               >
-                {/* <Grid item xs={12} md={10}>
+                <Grid item xs={12} md={10}>
                   {recaptchaKey ? (
                     <ReCAPTCHA
                       ref={recaptchaRef}
@@ -230,7 +227,7 @@ function Registro() {
                       onChange={onRecaptchaChange}
                     />
                   ) : null}
-                </Grid> */}
+                </Grid>
                 <Grid item xs={12} md={2}>
                   <Button
                     variant="contained"
