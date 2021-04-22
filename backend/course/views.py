@@ -90,7 +90,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
             'creation_date',
         ])
 
-        subscriptions = Subscription.objects.all().filter(is_active=True).values_list(
+        subscriptions = Subscription.objects.all().filter().values_list(
             'id',
             'name',
             'email',
