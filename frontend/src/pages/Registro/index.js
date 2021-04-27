@@ -1,85 +1,88 @@
-import React, { useRef, useState } from 'react';
+import React, {
+  // useRef,
+  useState,
+} from 'react';
 import {
   Grid,
   Container,
   Typography,
-  TextField,
-  Button,
+  // TextField,
+  // Button,
   Snackbar,
-  FormControlLabel,
-  Checkbox,
-  CircularProgress,
+  // FormControlLabel,
+  // Checkbox,
+  // CircularProgress,
 } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
-import EmailIcon from '@material-ui/icons/Email';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import EmailIcon from '@material-ui/icons/Email';
+// import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './styles';
-import { postSubscription } from '../../services/api';
+// import { postSubscription } from '../../services/api';
 
 function Registro() {
   // Change dynamically the page title:
   document.title = 'LIneA Minicurso | Registro';
 
   const classes = styles();
-  const formRef = useRef();
-  const recaptchaRef = useRef();
+  // const formRef = useRef();
+  // const recaptchaRef = useRef();
 
-  const recaptchaKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+  // const recaptchaKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 
   const [openFormFeedback, setOpenFormFeedback] = useState(false);
-  const [errorMessage, setErrorMessage] = useState({});
-  const [submitEnabled, setSubmitEnabled] = useState(!recaptchaKey);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState({});
+  // const [submitEnabled, setSubmitEnabled] = useState(!recaptchaKey);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const handleClose = () => setOpenFormFeedback(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setErrorMessage({});
-    setIsLoading(true);
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   setErrorMessage({});
+  //   setIsLoading(true);
 
-    if (submitEnabled) {
-      const name = formRef.current.name.value;
-      const email = formRef.current.email.value;
-      const institute = formRef.current.institute.value;
-      const education = formRef.current.education.value;
-      const position = formRef.current.position.value;
-      const occupation = formRef.current.occupation.value;
-      const certificate = formRef.current.certificate.checked;
+  //   if (submitEnabled) {
+  //     const name = formRef.current.name.value;
+  //     const email = formRef.current.email.value;
+  //     const institute = formRef.current.institute.value;
+  //     const education = formRef.current.education.value;
+  //     const position = formRef.current.position.value;
+  //     const occupation = formRef.current.occupation.value;
+  //     const certificate = formRef.current.certificate.checked;
 
-      postSubscription({
-        name,
-        email,
-        institute,
-        education,
-        position,
-        occupation,
-        certificate,
-      })
-        .then(() => {
-          setOpenFormFeedback(true);
-          // Reseting form:
-          formRef.current.reset();
+  //     postSubscription({
+  //       name,
+  //       email,
+  //       institute,
+  //       education,
+  //       position,
+  //       occupation,
+  //       certificate,
+  //     })
+  //       .then(() => {
+  //         setOpenFormFeedback(true);
+  //         // Reseting form:
+  //         formRef.current.reset();
 
-          // Forcing the reCAPTCHA to reset:
-          recaptchaRef.current.reset();
+  //         // Forcing the reCAPTCHA to reset:
+  //         recaptchaRef.current.reset();
 
-          // Forcing the Newsletter checkbox to reset:
-          formRef.current.certificate.checked = false;
+  //         // Forcing the Newsletter checkbox to reset:
+  //         formRef.current.certificate.checked = false;
 
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setErrorMessage(error.response.data);
-        });
-    }
-  };
+  //         setIsLoading(false);
+  //       })
+  //       .catch((error) => {
+  //         setErrorMessage(error.response.data);
+  //       });
+  //   }
+  // };
 
-  const onRecaptchaChange = (humanKey) => {
-    if (humanKey) {
-      setSubmitEnabled(true);
-    }
-  };
+  // const onRecaptchaChange = (humanKey) => {
+  //   if (humanKey) {
+  //     setSubmitEnabled(true);
+  //   }
+  // };
 
   return (
     <div>
@@ -95,11 +98,12 @@ function Registro() {
               color="error"
               gutterBottom
             >
-              (As vagas serão concedidas aos 15 primeiros inscritos,
-              satisfazendo o critério anunciado)
+              (As 15 vagas já foram preenchidas. Acompanhe nossas redes sociais
+              para participar das próximas edições)
             </Typography>
+
             <br />
-            <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
+            {/* <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
               <div className={classes.textFields}>
                 <TextField
                   required
@@ -252,7 +256,7 @@ function Registro() {
               <Typography variant="button" color="error">
                 * campos obrigatórios
               </Typography>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </Container>
