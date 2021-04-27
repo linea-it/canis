@@ -1,88 +1,84 @@
-import React, {
-  // useRef,
-  useState,
-} from 'react';
+import React, { useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Grid,
   Container,
   Typography,
-  // TextField,
-  // Button,
+  TextField,
+  Button,
   Snackbar,
-  // FormControlLabel,
-  // Checkbox,
-  // CircularProgress,
+  CircularProgress,
 } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
-// import EmailIcon from '@material-ui/icons/Email';
-// import ReCAPTCHA from 'react-google-recaptcha';
+import EmailIcon from '@material-ui/icons/Email';
+import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './styles';
-// import { postSubscription } from '../../services/api';
+import { postSubscription } from '../../services/api';
 
 function Registro() {
   // Change dynamically the page title:
   document.title = 'LIneA Minicurso | Registro';
 
   const classes = styles();
-  // const formRef = useRef();
-  // const recaptchaRef = useRef();
+  const formRef = useRef();
+  const recaptchaRef = useRef();
+  const history = useHistory();
 
-  // const recaptchaKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+  const recaptchaKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 
   const [openFormFeedback, setOpenFormFeedback] = useState(false);
-  // const [errorMessage, setErrorMessage] = useState({});
-  // const [submitEnabled, setSubmitEnabled] = useState(!recaptchaKey);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState({});
+  const [submitEnabled, setSubmitEnabled] = useState(!recaptchaKey);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClose = () => setOpenFormFeedback(false);
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   setErrorMessage({});
-  //   setIsLoading(true);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setErrorMessage({});
+    setIsLoading(true);
 
-  //   if (submitEnabled) {
-  //     const name = formRef.current.name.value;
-  //     const email = formRef.current.email.value;
-  //     const institute = formRef.current.institute.value;
-  //     const education = formRef.current.education.value;
-  //     const position = formRef.current.position.value;
-  //     const occupation = formRef.current.occupation.value;
-  //     const certificate = formRef.current.certificate.checked;
+    if (submitEnabled) {
+      const name = formRef.current.name.value;
+      const email = formRef.current.email.value;
+      const institute = formRef.current.institute.value;
+      const education = formRef.current.education.value;
+      const position = formRef.current.position.value;
+      const occupation = formRef.current.occupation.value;
+      const certificate = false;
 
-  //     postSubscription({
-  //       name,
-  //       email,
-  //       institute,
-  //       education,
-  //       position,
-  //       occupation,
-  //       certificate,
-  //     })
-  //       .then(() => {
-  //         setOpenFormFeedback(true);
-  //         // Reseting form:
-  //         formRef.current.reset();
+      postSubscription({
+        name,
+        email,
+        institute,
+        education,
+        position,
+        occupation,
+        certificate,
+      })
+        .then(() => {
+          setOpenFormFeedback(true);
+          // Reseting form:
+          formRef.current.reset();
 
-  //         // Forcing the reCAPTCHA to reset:
-  //         recaptchaRef.current.reset();
+          // Forcing the reCAPTCHA to reset:
+          recaptchaRef.current.reset();
 
-  //         // Forcing the Newsletter checkbox to reset:
-  //         formRef.current.certificate.checked = false;
+          setIsLoading(false);
 
-  //         setIsLoading(false);
-  //       })
-  //       .catch((error) => {
-  //         setErrorMessage(error.response.data);
-  //       });
-  //   }
-  // };
+          history.push('/registro/confirmacao/');
+        })
+        .catch((error) => {
+          setErrorMessage(error.response.data);
+        });
+    }
+  };
 
-  // const onRecaptchaChange = (humanKey) => {
-  //   if (humanKey) {
-  //     setSubmitEnabled(true);
-  //   }
-  // };
+  const onRecaptchaChange = (humanKey) => {
+    if (humanKey) {
+      setSubmitEnabled(true);
+    }
+  };
 
   return (
     <div>
@@ -90,7 +86,7 @@ function Registro() {
         <Grid item xs={12}>
           <Grid item xs={11} md={6} className={classes.grid}>
             <Typography variant="h3" align="center" color="primary">
-              Registro
+              Manifestação de Interesse
             </Typography>
             <Typography
               variant="subtitle2"
@@ -98,12 +94,12 @@ function Registro() {
               color="error"
               gutterBottom
             >
-              (As 15 vagas já foram preenchidas. Acompanhe nossas redes sociais
-              para participar das próximas edições)
+              Infelizmente as inscrições estão encerradas pois as 15 vagas
+              disponíveis já foram preenchidas. Caso você tenha interesse em
+              participar de uma próxima edição, preencha o formulário abaixo:
             </Typography>
-
             <br />
-            {/* <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
+            <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
               <div className={classes.textFields}>
                 <TextField
                   required
@@ -210,13 +206,6 @@ function Registro() {
                 />
               </div>
 
-              <FormControlLabel
-                label="Gostaria de certificado?"
-                labelPlacement="start"
-                className={classes.checkboxLabel}
-                control={<Checkbox name="certificate" />}
-              />
-
               <Grid
                 container
                 spacing={2}
@@ -256,7 +245,7 @@ function Registro() {
               <Typography variant="button" color="error">
                 * campos obrigatórios
               </Typography>
-            </Grid> */}
+            </Grid>
           </Grid>
         </Grid>
       </Container>
@@ -268,7 +257,14 @@ function Registro() {
       >
         <Alert onClose={handleClose} severity="success">
           <AlertTitle>Sucesso</AlertTitle>
-          <Typography variant="body1">Registrado com sucesso!</Typography>
+          <Typography variant="body1">
+            Obrigado por manifestar seu interesse no módulo I - LIneA Science
+            Server.
+          </Typography>
+          <Typography variant="body1">
+            Assim que a próxima edição estiver disponível, entraremos em
+            contato!
+          </Typography>
         </Alert>
       </Snackbar>
     </div>

@@ -104,7 +104,8 @@ function Informacoes() {
               color="primary"
               gutterBottom
             >
-              O período de inscrição acontece até <strong>30 de abril</strong>.
+              O período para inscrição se encontra encerrado. Manifeste seu
+              interesse em uma próxima edição <a href="/registro/">aqui</a>.
             </Typography>
             <br />
             <Typography

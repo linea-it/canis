@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Programa from '../pages/Programa';
 import Horario from '../pages/Horario';
 import Registro from '../pages/Registro';
+import Confirmacao from '../pages/Registro/Confirmacao';
 import Informacoes from '../pages/Informacoes';
 import Plots from '../pages/Plots';
 import NotFound from '../pages/NotFound';
@@ -24,6 +25,7 @@ export default function Routes() {
           <Route exact path="/programa" component={Programa} />
           <Route exact path="/horario" component={Horario} />
           <Route exact path="/registro" component={Registro} />
+          <Route exact path="/registro/confirmacao/" component={Confirmacao} />
           <Route exact path="/informacoes-adicionais" component={Informacoes} />
           <Route isPrivate exact path="/plots" component={Plots} />
           <Route component={NotFound} />
