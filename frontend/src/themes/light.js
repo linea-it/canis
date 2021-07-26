@@ -5,19 +5,15 @@ const light = createMuiTheme({
     primary: {
       main: '#283663',
     },
-    secondary: {
-      main: '#ffdd00',
-    },
+    // secondary: {
+    //   main: '#ffdd00',
+    // },
     success: {
-      main: '#4caf50'
+      main: '#4caf50',
     },
   },
   typography: {
-    fontFamily: [
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-    ].join(','),
+    fontFamily: ['Roboto', '"Helvetica Neue"', 'Arial'].join(','),
     useNextVariants: true,
     text: {
       secondary: '#fff',
@@ -26,10 +22,10 @@ const light = createMuiTheme({
   overrides: {
     MuiFormHelperText: {
       root: {
-        textTransform: 'capitalize'
-      }
+        textTransform: 'capitalize',
+      },
     },
-  }
+  },
 });
 
 export default light;
