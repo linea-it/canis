@@ -35,6 +35,10 @@ function Header() {
       description: 'Informações Adicionais',
       href: '/informacoes-adicionais',
     },
+    {
+      description: 'Participantes',
+      href: '/participantes',
+    },
   ];
 
   const toggleMenuClick = () => {
