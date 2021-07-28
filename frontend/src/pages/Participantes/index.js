@@ -10,10 +10,13 @@ import {
   TableHead,
   TableRow,
 } from '@material-ui/core';
+import useStyles from './styles';
 
 function Participantes() {
   // Change dynamically the page title:
   document.title = 'LIneA Minicurso | Participantes';
+
+  const classes = useStyles();
 
   const rows = [
     {
@@ -70,10 +73,14 @@ function Participantes() {
         <Grid xs={12}>
           <TableContainer component={Paper} style={{ marginTop: 20 }}>
             <Table>
-              <TableHead>
+              <TableHead className={classes.tableHeader}>
                 <TableRow>
-                  <TableCell>Nome</TableCell>
-                  <TableCell>Instituição</TableCell>
+                  <TableCell className={classes.tableHeaderCell}>
+                    Nome
+                  </TableCell>
+                  <TableCell className={classes.tableHeaderCell} align="right">
+                    Instituição
+                  </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -82,7 +89,7 @@ function Participantes() {
                     <TableCell component="th" scope="row">
                       {row.name}
                     </TableCell>
-                    <TableCell>{row.institute}</TableCell>
+                    <TableCell align="right">{row.institute}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

@@ -21,22 +21,6 @@ function Home() {
             <Typography variant="h6" align="center" color="primary">
               (Edição Piloto)
             </Typography>
-
-            <br />
-            <Grid item xs={12}>
-              <Typography variant="h5" align="center" color="secondary">
-                Nova edição dos minicursos LIneA
-                <br />
-                <a
-                  href="https://minicurso-ed2.linea.gov.br"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  minicurso-ed2.linea.gov.br
-                </a>
-              </Typography>
-            </Grid>
-
             <br />
             <Typography variant="h4" align="center" color="primary">
               <strong>
